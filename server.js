@@ -22,7 +22,7 @@ app.use(cors(corsOptions));
 app.use(express.json()); // No need for body-parser if using Express 4.16+
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'main.html'));
+    res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
 // Example of endpoint to get formatted data from Excel file
