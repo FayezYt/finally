@@ -11,13 +11,13 @@ worker.value = str;
 
 let companies = [];
 let cities = []; // Array to store cities data
-let ip_address = 'https://jaber-test.onrender.com/';
+let ip_address = 'https://jaber-test.onrender.com';
 
 
 // DATA FETCHING
 window.onload = function() {
   // Fetch companies data
-  fetch(`${ip_address}get-companies`)
+  fetch(`${ip_address}/get-companies`)
       .then(response => response.json()) // Parse the response as JSON
       .then(data => {
           companies = data; // Store the data in the array
@@ -39,9 +39,9 @@ window.onload = function() {
       .catch(error => console.error('Error fetching cities:', error));
 
   // Fetch location data
-  fetch(`${ip_address}get-locations`)
+  fetch(`${ip_address}/get-locations`)
       .then(response => response.json())
-      .then(locations => {
+      .then(locations => { 
         console.log(locations, 'locations Here for test'); // Check the structure of the data
         populateDropdown('location', locations);
       })
