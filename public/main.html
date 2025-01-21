@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- LINK BOOTSTRAP CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link id="theme-stylesheet" rel="stylesheet" href="css/styles_bright.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="icon" href="mnc_logo.ico" sizes="512x512">
+  <title>سجل الزيارات</title>
+</head>
+<body dir="rtl">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+  <div class="container">
+    <h1>سجل الزيارات</h1>
+
+
+    <button id="theme-switch">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+        <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white">
+        <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/>
+      </svg>
+    </button>
+    
+
+
+
+    <div id="alert"></div>
+    <span id="date_top"></span>
+
+    <form id="visitForm">
+      <div class="form-group">
+        <label for="worker" id="nameworker">الاسم:</label> 
+        <input id="worker" value="test" class="input1" disabled>
+      </div>
+
+      <button type="button" class="btn btn-danger" id="no_work">
+        لم اذهب الى العمل
+      </button>
+
+      <div class="form-group">
+        <label for="startWork">وقت بدء العمل:</label>
+        <input type="time" id="startWork" name="startWork" value="09:00" min="07:00" max="23:59">
+      </div>
+
+      <div class="form-group">
+        <label for="endWork">وقت انتهاء العمل:</label>
+        <input type="time" id="endWork" name="endWork" value="17:00" min="07:00" max="23:59">
+      </div>
+
+      <h2 id="filter">فلاتر البحث</h2>
+
+      <!-- City Filter (Location filter moved to top) -->
+      <div class="form-group">
+        <label for="city">اختر المدينة:</label>
+        <select id="city">
+          <option value="all">الكل</option>
+        </select>
+      </div>
+
+      <!-- Location Filter (now for the days of the week) -->
+      <div class="form-group">
+        <label for="location">اختر منطقة الزيارة:</label>
+        <select id="location">
+          <option value="all">الكل</option>
+            
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="searchInput">البحث عن زبون:</label>
+        <input type="text" id="searchInput" onkeyup="searchCompanies()" placeholder="اكتب اسم الشركة...">
+        <div id="companyList" class="companyList">
+          <!-- Companies will be dynamically added here -->
+        </div>
+      </div>
+
+      <button type="button" id="submitButton" onclick="submitData()" class="btn btn-primary">
+        ارسال كشف الزيارات
+      </button>
+    </form>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/themes.js"></script>
+</body>
+</html>

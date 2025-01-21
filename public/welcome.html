@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرحباً بك</title>
+    <link rel="stylesheet" href="css/welcome-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="icon" href="mnc_logo.ico" sizes="512x512">
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="welcome-card">
+            <div class="profile-section">
+                <div class="profile-circle">
+                    <span class="initials" id="mySpan"></span> <!-- This is where the initials will appear -->
+                </div>
+                <div class="sparkles"></div>
+            </div>
+            <h1 class="welcome-text animate__animated animate__fadeInDown">
+                مرحباً بك
+                <span class="employee-name animate__animated animate__fadeInUp animate__delay-1s" id="name_employe">طالب ابو الزفت</span>
+            </h1>
+            <p class="date-display animate__animated animate__fadeIn animate__delay-2s" id="currentDate"></p>
+            <button class="start-button animate__animated animate__bounceIn animate__delay-2s" onclick="window.location.href='main.html'">
+                <span class="button-text">لنبدأ العمل</span>
+                <span class="button-icon">→</span>
+            </button>
+        </div>
+        <div class="background-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <script src="js/welcome.js"></script>
+</body>
+</html>

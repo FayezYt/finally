@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" href="mnc_logo.ico">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="welcome-container">
+        <div class="profile-section">
+            <div class="profile-circle">
+                <div class="initials">MNC</div>
+            </div>
+        </div>
+        <h1 class="welcome-text">Login</h1>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">User ID</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required autocomplete="off">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <div id="login-error" class="error hidden">Invalid username or password</div>
+            </div>
+            <button type="submit" class="start-button">
+                <span>Login</span>
+            </button>
+        </form>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

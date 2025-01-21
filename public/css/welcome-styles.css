@@ -1,0 +1,242 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+    --secondary-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --background: #f8fafc;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.welcome-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.welcome-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 500px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.profile-section {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.profile-circle {
+    width: 120px;
+    height: 120px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+}
+
+.initials {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.welcome-text {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.employee-name {
+    display: block;
+    color: #3b82f6;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+.date-display {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+}
+
+.start-button {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.25rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
+}
+
+.start-button:active {
+    transform: translateY(1px);
+}
+
+.button-icon {
+    transition: transform 0.3s ease;
+}
+
+.start-button:hover .button-icon {
+    transform: translateX(5px);
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Background Shapes */
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    animation: moveShape linear infinite;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #6366f120 0%, #3b82f620 100%);
+    top: -150px;
+    right: -150px;
+    animation-duration: 20s;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #f59e0b20 0%, #d9770620 100%);
+    bottom: -100px;
+    left: -100px;
+    animation-duration: 25s;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #6366f115 0%, #3b82f615 100%);
+    top: 50%;
+    left: 50px;
+    animation-duration: 30s;
+}
+
+.shape-4 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #f59e0b15 0%, #d9770615 100%);
+    bottom: 100px;
+    right: 100px;
+    animation-duration: 22s;
+}
+
+@keyframes moveShape {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(100px, 100px) rotate(90deg); }
+    50% { transform: translate(0, 200px) rotate(180deg); }
+    75% { transform: translate(-100px, 100px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Sparkles Effect */
+.sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sparkles::before,
+.sparkles::after {
+    content: '';
+    position: absolute;
+    background: white;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+    50% { transform: scale(1) rotate(180deg); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcome-card {
+        padding: 2rem;
+        margin: 1rem;
+    }
+
+    .welcome-text {
+        font-size: 2rem;
+    }
+
+    .employee-name {
+        font-size: 1.75rem;
+    }
+
+    .profile-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .initials {
+        font-size: 2rem;
+    }
+}
