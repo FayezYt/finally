@@ -17,7 +17,7 @@ let ip_address = 'https://jaber-test.onrender.com/';
 // DATA FETCHING
 window.onload = function() {
   // Fetch companies data
-  fetch(`http://${ip_address}/get-companies`)
+  fetch(`${ip_address}get-companies`)
       .then(response => response.json()) // Parse the response as JSON
       .then(data => {
           companies = data; // Store the data in the array
@@ -30,7 +30,7 @@ window.onload = function() {
       });
 
   // Fetch city data
-  fetch(`http://${ip_address}/get-cities`)
+  fetch(`${ip_address}/get-cities`)
       .then(response => response.json())
       .then(cities => {
           console.log(cities, 'locationS Here for test'); // Check the structure of the data
@@ -39,7 +39,7 @@ window.onload = function() {
       .catch(error => console.error('Error fetching cities:', error));
 
   // Fetch location data
-  fetch(`http://${ip_address}/get-locations`)
+  fetch(`${ip_address}get-locations`)
       .then(response => response.json())
       .then(locations => {
         console.log(locations, 'locations Here for test'); // Check the structure of the data
